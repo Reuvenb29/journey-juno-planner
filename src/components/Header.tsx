@@ -10,10 +10,10 @@ const Header = () => {
         </div>
         <div className="flex items-center gap-4">
           <Button variant="hero" size="sm" asChild>
-            <Link to="/login">Log In</Link>
+            <Link to="/login" onClick={() => console.log("Login button clicked")}>Log In</Link>
           </Button>
           <Button variant="hero" size="sm" asChild>
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/signup" onClick={() => console.log("Signup button clicked")}>Sign Up</Link>
           </Button>
         </div>
       </nav>
