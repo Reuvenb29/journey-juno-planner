@@ -26,6 +26,38 @@ const Features = () => {
     title: "Seamless Booking",
     description: "Book flights, hotels, and activities directly through our integrated platform"
   }];
-  return;
+  return (
+    <section className="py-24 bg-muted/50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Everything you need for perfect travel
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Discover why millions of travelers trust TravelMate to plan their perfect adventures
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => {
+            const IconComponent = feature.icon;
+            return (
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <IconComponent className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{feature.description}</p>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 };
 export default Features;
